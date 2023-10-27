@@ -21,6 +21,22 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'surname',
+        'gender',
+        'birthday',
+        'image',
+        'phone',
+        'address',
+        'city',
+        'country',
+        'state',
+        'discord',
+        'twitter',
+        'linkedin',
+        'instagram',
+        'github',
+        'facebook',
+        'description',
     ];
 
     /**
@@ -42,4 +58,19 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function books()
+    {
+        return $this->hasMany(Book::class);
+    }
+
+    public function authors()
+    {
+        return $this->hasMany(Author::class);
+    }
+
+    public function categories()
+    {
+        return $this->hasMany(Category::class);
+    }
 }
